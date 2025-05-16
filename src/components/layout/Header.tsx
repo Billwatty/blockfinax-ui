@@ -13,67 +13,7 @@ import {
   DropdownMenuSeparator, 
   DropdownMenuTrigger
 } from "../ui/dropdown-menu";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle
-} from "../ui/dialog";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-
-const RegisterDialog = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const { createAccount } = useWeb3();
-  
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await createAccount(username, password);
-    onClose();
-  };
-  
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px]">
-        <form onSubmit={handleRegister}>
-          <DialogHeader>
-            <DialogTitle>Register</DialogTitle>
-            <DialogDescription>
-              Register to create your account and wallet.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid gap-2">
-              <Label htmlFor="reg-username">Username</Label>
-              <Input 
-                id="reg-username" 
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)} 
-                required 
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="reg-password">Password</Label>
-              <Input 
-                id="reg-password" 
-                type="password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                required 
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button type="submit">Register</Button>
-          </DialogFooter>
-        </form>
-      </DialogContent>
-    </Dialog>
-  );
-};
+import { Register } from "@/components/auth/Register"; // Import the new Register component
 
 const UserMenu = () => {
   const { user, logoutUser } = useWeb3();
@@ -138,7 +78,7 @@ const Header = () => {
             >
               <Menu className="h-6 w-6" />
             </Button>
-            <h1 className="text-xl font-bold text-primary">Base Stablecoins</h1>
+            <h1 className="text-xl font-bold text-primary">BlockFinax</h1>
           </div>
           <div className="flex items-center">
             {isLoggedIn ? (
@@ -157,7 +97,8 @@ const Header = () => {
                   <span>Register</span>
                 </Button>
                 
-                <RegisterDialog 
+                {/* Using the new Register component instead of RegisterDialog */}
+                <Register 
                   isOpen={registerDialogOpen}
                   onClose={() => setRegisterDialogOpen(false)}
                 />

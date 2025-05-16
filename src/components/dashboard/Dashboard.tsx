@@ -125,7 +125,7 @@ const QuickActions = () => {
               </div>
             </a>
             
-            <a href="/invoice">
+            <a href="/invoices">
               <div className="relative rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-md flex items-center space-x-3 hover:border-primary hover:shadow-lg transition-all duration-200 cursor-pointer">
                 <div className="flex-shrink-0 h-10 w-10 rounded-md bg-green-600 flex items-center justify-center">
                   <Check className="h-6 w-6 text-white" />
