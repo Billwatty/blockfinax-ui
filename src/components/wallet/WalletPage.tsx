@@ -442,31 +442,31 @@ const EnhancedWalletPage = () => {
     });
   };
   
-  if (!isLoggedIn) {
-    return (
-      <div className="flex flex-col gap-8">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Wallet</h1>
-          <p className="text-muted-foreground">Manage your funds and transactions</p>
-        </div>
+  // if (!isLoggedIn) {
+  //   return (
+  //     <div className="flex flex-col gap-8">
+  //       <div>
+  //         <h1 className="text-2xl font-bold tracking-tight">Wallet</h1>
+  //         <p className="text-muted-foreground">Manage your funds and transactions</p>
+  //       </div>
         
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle>Login Required</CardTitle>
-            <CardDescription>
-              Please login to view your wallet balance and transactions.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex justify-center py-6">
-            <AlertCircle className="h-16 w-16 text-muted-foreground" />
-          </CardContent>
-          <CardFooter className="flex justify-center">
-            <Button onClick={() => window.location.href = '/'}>Go to Login</Button>
-          </CardFooter>
-        </Card>
-      </div>
-    );
-  }
+  //       <Card className="w-full">
+  //         <CardHeader>
+  //           <CardTitle>Login Required</CardTitle>
+  //           <CardDescription>
+  //             Please login to view your wallet balance and transactions.
+  //           </CardDescription>
+  //         </CardHeader>
+  //         <CardContent className="flex justify-center py-6">
+  //           <AlertCircle className="h-16 w-16 text-muted-foreground" />
+  //         </CardContent>
+  //         <CardFooter className="flex justify-center">
+  //           <Button onClick={() => window.location.href = '/'}>Go to Login</Button>
+  //         </CardFooter>
+  //       </Card>
+  //     </div>
+  //   );
+  // }
   
   if (isLoadingWallets) {
     return (
