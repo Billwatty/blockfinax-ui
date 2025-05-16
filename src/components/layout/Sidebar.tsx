@@ -53,7 +53,7 @@ const Sidebar = () => {
     <aside className={sidebarClasses}>
       <div className="flex flex-col w-64 border-r border-gray-200 bg-white">
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
-          <h1 className="text-xl font-bold text-primary">Base Stablecoins</h1>
+          <h1 className="text-xl font-bold text-primary">BlockFinax</h1>
           <Button 
             variant="ghost" 
             size="icon" 

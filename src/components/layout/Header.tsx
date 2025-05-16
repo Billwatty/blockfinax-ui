@@ -78,7 +78,7 @@ const Header = () => {
             >
               <Menu className="h-6 w-6" />
             </Button>
-            <h1 className="text-xl font-bold text-primary">Base Stablecoins</h1>
+            <h1 className="text-xl font-bold text-primary">BlockFinax</h1>
           </div>
           <div className="flex items-center">
             {isLoggedIn ? (
